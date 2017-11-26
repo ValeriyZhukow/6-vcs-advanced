@@ -1,12 +1,4 @@
-<!DOCTYPE html><!DOCTYPE html>
-<html lang="en"><html lang="en">
-<head><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body><body>
-    
-</body></body>
-</html></html>
+Шпаргалка по Git — основные команды, слияние веток, выписка веток с github
+Шпаргалка по git. Пошаговое руководство: как выполнить слияние веток в git, как создать новую ветку и репозиторий, как выписать ветку с github и т.п. Инструкции по git для начинающих.
+
+Git — это распределенная система контроля версий. Это главное отличие git от svn. Каждый разработчик создает на своем компьютере отдельный, полноценный репозиторий.
