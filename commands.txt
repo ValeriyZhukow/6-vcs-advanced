@@ -1,0 +1,143 @@
+CURSOR Education | Homework "VCS Advanced" – Valeriy Zhukow
+
+1. Робота з бренчами
+Create a new repository 6-vcs-advanced
+mkdir Cursor Homework
+cd Cursor Homework 
+mkdir Homework #2 VCS Advanced
+cd Homework #2 VCS Advanced
+git init
+  Initialized empty Git repository in C:/Users/stron/Desktop/Cursor Homework/Homework #2 VCS     Advanced/.git/
+git status
+  On branch master
+  No commits yet
+  nothing to commit (create/copy files and use "git add" to track)
+git checkout -b architecture
+  Switched to a new branch 'architecture'
+mkdir assets uploads
+touch index.html
+git add .
+git status
+git commit -m 'Added assets, uploads, index.html'
+touch assets/all.js assets/css.js
+git add assets/*.js
+git commit -m 'Added all.js / css.js'
+git status
+touch uploads/.gitkeep
+git add uploads/
+git commit -m 'Added empty uploads folde'
+touch .gitignore
+  .gitignore
+  /uploads/*.*
+  !/uploads/.gitkeep
+git remote add origin https://github.com/ValeriyZhukow/6-vcs-advanced.git
+git push origin architecture
+ Counting objects: 9, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (9/9), 907 bytes | 302.00 KiB/s, done.
+Total 9 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/ValeriyZhukow/6-vcs-advanced.git
+ * [new branch]      architecture -> architecture
+git checkout master
+  Switched to a branch 'master'
+
+git merge architecture
+  Updating 7345137..e96148e
+  Fast-forward
+   assets/all.js    | 0
+   assets/css.js    | 0
+   index.html       | 0
+   uploads/.gitkeep | 0
+   4 files changed, 0 insertions(+), 0 deletions(-)
+   create mode 100644 assets/all.js
+   create mode 100644 assets/css.js
+   create mode 100644 index.html
+   create mode 100644 uploads/.gitkeep
+git branch -d architecture
+  Deleted branch architecture (was e96148e).
+
+2. Rebase
+git branch rebase_test
+touch styles.css
+git add styles.css
+git commit -m 'Added styles.css'
+git checkout rebase_test
+  Switched to branch 'rebase_test'
+git rebase master
+git status
+git add index.html
+git commit -m 'Added into index.html code'
+touch assets/js.js
+git add assets/js.js
+git commit -m 'Added js.js'
+git push origin rebase_test
+git checkout master
+git merge rebase_test
+git branch -d rebase_test
+  Deleted branch rebase_test (was aa40176).
+
+3. Tag
+touch script.js
+git add script.js
+git commit -m 'Added script.js'
+git tag -a v0.1 -m 'script.js v0.1'
+git push origin v0.1 master
+
+
+4. Submodule (advanced level)
+git submodule add https://github.com/cursor-education/site.git
+  Cloning into 'C:/Users/stron/Desktop/Cursor Homework/Homework #2 VCS Advanced/site'...
+  remote: Counting objects: 11991, done.
+  remote: Total 11991 (delta 0), reused 0 (delta 0), pack-reused 11991 eceiving objects:  99%      (11962/11991), 39.93 MiB | 562.00 KiB/s
+  Receiving objects: 100% (11991/11991), 40.15 MiB | 461.00 KiB/s, done.
+  Resolving deltas: 100% (5204/5204), done.
+  warning: LF will be replaced by CRLF in .gitmodules.
+  The file will have its original line endings in your working directory.
+git status
+git add .
+git commit -m 'Added submodule - site.git'
+git push origin master
+
+5. Git Pages (advanced level)
+git checkout -b gh-pages
+  Switched to a new branch 'gh-pages'
+git status
+git add index.html
+git commit -m 'Corrected index.html'
+git push origin gh-pages
+  Counting objects: 3, done.
+  Delta compression using up to 4 threads.
+  Compressing objects: 100% (3/3), done.
+  Writing objects: 100% (3/3), 345 bytes | 345.00 KiB/s, done.
+  Total 3 (delta 2), reused 0 (delta 0)
+  remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+  To https://github.com/ValeriyZhukow/6-vcs-advanced.git
+   * [new branch]      gh-pages -> gh-pages
+
+https://valeriyzhukow.github.io/6-vcs-advanced/
+
+git status
+git add index.html
+git commit -m 'Corrected GitHub Pages'
+git push origin gh-pages
+
+6. Conflict (advanced level)
+git checkout master
+touch file.txt
+git add file.txt
+git commit -m 'Added file.txt'
+git add file.txt
+git commit -m 'Added content in file.txt'
+git checkout -b branch
+git add file.txt
+git commit -m 'Replaced all text in file.txt'
+git checkout master
+git merge branch
+git mergetool
+
+
+
+
+
